@@ -20,9 +20,31 @@ document.getElementById('input4').value = localStorage.getItem('input4')
 document.getElementById('input5').value = localStorage.getItem('input5')
 
 
-
-
 //Displays time on screen(not in realtime yet)
-let now = moment();
+var update = function (){
+let now = moment(new Date());
 console.log(now.format("YYYY MM DD - hh:mm:ss a"));
 displaytime.textContent = now;
+}
+update();
+setInterval(update, 1000)
+
+
+function hourupdater() {
+    var currenthour = moment().hours()
+    $(".time-block").each(function () {
+        console.log(parseInt(($(this).text().split(' ')[0])))
+        var blockhour = parseInt(($(this).text().split(' ')[0]));
+        if (blockhour < currenthour) { $(this).addClass("past") }
+        else if (blockhour === currenthour) {
+            $(this).removeClass("past")
+            $(this).addClass("present")
+        }
+        else {
+            $(this).removeClass("past")
+            $(this).removeClass("present")
+            $(this).addClass("future")
+        }
+    });
+}
+hourupdater();
