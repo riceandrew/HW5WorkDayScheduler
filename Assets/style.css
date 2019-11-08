@@ -69,4 +69,10 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }
+  .inputall{
+    width: 100%;
+    border: none;
+    line-height: 40px;
+    
+  }
   
