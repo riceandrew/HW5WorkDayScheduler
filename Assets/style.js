@@ -23,7 +23,6 @@ document.getElementById('input5').value = localStorage.getItem('input5')
 //Displays time on screen(not in realtime yet)
 var update = function (){
 let now = moment(new Date());
-console.log(now.format("YYYY MM DD - hh:mm:ss a"));
 displaytime.textContent = now;
 }
 update();
